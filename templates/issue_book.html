@@ -1,0 +1,23 @@
+<h2>Issue Book</h2>
+
+<form method="POST">
+
+    <label>Select User:</label><br>
+    <select name="user_id">
+        {% for user in users %}
+        <option value="{{ user[0] }}">{{ user[1] }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Select Book:</label><br>
+    <select name="book_id">
+        {% for book in books %}
+        <option value="{{ book[0] }}">{{ book[1] }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <button type="submit">Issue Book</button>
+</form>
+
+<br>
+<a href="/admin">Back</a>

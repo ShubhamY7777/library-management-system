@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">🔍 Search Book</h2>
+
+    <form method="POST" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="book_name" class="form-control" placeholder="Enter Book Name" required>
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    {% if result %}
+        <div class="card shadow p-3">
+
+            {% if result.status == "Available" %}
+                <h5 class="text-success">✅ Book Available</h5>
+                <p><strong>Title:</strong> {{ result.title }}</p>
+                <p><strong>Copies Left:</strong> {{ result.copies }}</p>
+
+            {% elif result.status == "Not Available" %}
+                <h5 class="text-danger">❌ Book Not Available</h5>
+                <p><strong>Title:</strong> {{ result.title }}</p>
+
+                {% if borrower %}
+                    <p><strong>Borrowed By:</strong> {{ borrower[0] }}</p>
+                    <p><strong>Return Date:</strong> {{ borrower[1] }}</p>
+                {% endif %}
+
+            {% else %}
+                <h5 class="text-warning">⚠ Book Not Found</h5>
+            {% endif %}
+
+        </div>
+    {% endif %}
+
+    <div class="text-center mt-4">
+        <a href="/admin" class="btn btn-secondary">Back</a>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<h2>Return Book</h2>
+
+<form method="POST">
+
+    <label>Select Issued Book:</label><br>
+    <select name="issue_id">
+        {% for record in records %}
+        <option value="{{ record[0] }}">
+            {{ record[1] }} - {{ record[2] }}
+        </option>
+        {% endfor %}
+    </select><br><br>
+
+    <button type="submit">Return Book</button>
+</form>
+
+<br>
+<a href="/admin">Back</a>
