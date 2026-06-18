@@ -1,5 +1,13 @@
 venv/
 __pycache__/
 *.pyc
-*.xlsx
+
 .env
+
+uploads/
+static/cards/
+
+.idea/
+.vscode/
+
+*.db

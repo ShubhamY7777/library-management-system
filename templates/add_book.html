@@ -9,11 +9,26 @@
 <div class="container mt-5">
     <h2 class="text-center mb-4">➕ Add New Book</h2>
 
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="Book Title" class="form-control mb-3" required>
         <input type="text" name="author" placeholder="Author" class="form-control mb-3" required>
         <input type="text" name="publisher" placeholder="Publisher" class="form-control mb-3" required>
+        <input type="file"
+       name="cover"
+       class="form-control mb-3"
+       required>
 
+<input type="text"
+       name="rack"
+       placeholder="Rack Number"
+       class="form-control mb-3"
+       required>
+
+<input type="text"
+       name="shelf"
+       placeholder="Shelf Number"
+       class="form-control mb-3"
+       required>
         <button class="btn btn-success">Add Book</button>
     </form>
 
